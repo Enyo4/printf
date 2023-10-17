@@ -40,7 +40,7 @@ int print_char(va_list c)
 	return (1);
 }
 /**
- * print_porcentage - %
+ * print_percentage - print a '%' charcter
  *
  * Return: 1.
  */
