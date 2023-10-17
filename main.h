@@ -9,7 +9,7 @@
 /**
  * struct op - Struct op
  *
- * @op: The operator
+ * @type: The data type
  * @f: The function associated
  */
 typedef struct op
