@@ -17,6 +17,7 @@ int (*printf_func(const char *format))(va_list)
 		{"s", print_string},
 		{"d", print_dec},
 		{"i", print_int},
+		{"b", print_bin},
 		{"r", print_rev},
 		{"o", print_octal},
 		{"x", print_x},
