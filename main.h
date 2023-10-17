@@ -22,5 +22,12 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int print_string(va_list s);
 int print_char(va_list c);
+int print_int(va_list i);
+int print_dec(va_list d);
+int print_dec(va_list d);
+int print_rev(va_list r);
+int print_octal(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
 
 #endif

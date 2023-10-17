@@ -15,12 +15,18 @@ int (*printf_func(const char *format))(va_list)
 	print_f form[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"d", print_dec},
+		{"i", print_int},
+		{"r", print_rev},
+		{"o", print_octal},
+		{"x", print_x},
+		{"X", print_X},
 		{NULL, NULL}
 	};
 
 	while (form[i].type)
 	{
-		if (form[i].type[0] == format[0])
+		if (form[i].type[0] == (*format))
 		{
 			return (form[i].f);
 		}
@@ -61,7 +67,16 @@ int _printf(const char *format, ...)
 			i += 2;
 			continue;
 		}
-		_putchar(format[i]);
+		if (format[i] == '%' && format[i + 1] == 'r')
+		{
+			_putchar('%');
+			count++;
+			i += 2;
+		}
+		if (!format[i + 1])
+			return (-1);
+                _putchar(format[i]);
+		count++;
 		if (format[i + 1] == '%')
 			i += 2;
 		else
