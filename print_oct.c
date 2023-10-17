@@ -8,7 +8,7 @@
  * Return: the number of characters printed
  */
 int print_oct(va_list o)
-{       
+{
 	unsigned int num;
 	int i, count = 0;
 	int octal[32];
