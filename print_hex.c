@@ -70,13 +70,15 @@ int print_X(va_list X)
 }
 /**
  * print_decimalToHexCode - prints hexcode of a decimal value
- * @decimalValue: the decimal value to fetch
+ * @num: number to be converted
+ *
+ * Return: number of characters printed
  */
 int print_decimalToHexCode(unsigned int num)
 {
 	int count = 0, i = 0;
 	char hex_buffer[BUFFER_SIZE];
-	char hex_char[] = "0123456789abcdef";
+	char hex_chars[] = "0123456789abcdef";
 
 	if (num == 0)
 	{
@@ -95,7 +97,7 @@ int print_decimalToHexCode(unsigned int num)
 		for (i--; i >= 0; i--)
 		{
 			_putchar(hex_buffer[i]);
-			count++
+			count++;
 		}
 	}
 	return (count);
