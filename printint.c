@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * printInteger - prints an integer up to 20 digits
  * @num: the number to print
