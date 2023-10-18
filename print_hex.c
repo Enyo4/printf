@@ -71,7 +71,7 @@ int print_X(va_list X)
 /**
  * print_decimalToHexCode - prints hexcode of a decimal value
  * @num: number to be converted
- * @n: number to determine whether to print hex in uppercase or lowercase
+ * @n: 1 for uppercase hex (A-F), 0 for lowercase hex (a-f)
  *
  * Return: number of characters printed
  */
@@ -83,11 +83,12 @@ int print_decimalToHexCode(unsigned long num, int n)
 
 	if (n == 0)
 	{
-		/* Use lowercase letters */
-		for (i = 10; i < 16; i++)
-		{
-			hex_chars[i] = hex_chars[i] + 32;
-		}
+		hex_chars[10] = 'a';
+		hex_chars[11] = 'b';
+		hex_chars[12] = 'c';
+		hex_chars[13] = 'd';
+		hex_chars[14] = 'e';
+		hex_chars[15] = 'f';
 	}
 	if (num == 0)
 	{
