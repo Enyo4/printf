@@ -22,7 +22,7 @@ int print_oct(va_list o)
 	for (i = 0; num > 0; i++)
 	{
 		octal[i] = num % 8;
-		num /= 2;
+		num /= 8;
 	}
 	for (i -= 1; i >= 0; i--)
 	{
