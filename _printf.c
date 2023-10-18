@@ -22,6 +22,7 @@ int (*printf_func(const char *format))(va_list)
 		{"o", print_oct},
 		{"x", print_x},
 		{"X", print_X},
+		{"u", print_u},
 		{NULL, NULL}
 	};
 
