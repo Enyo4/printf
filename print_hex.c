@@ -72,28 +72,31 @@ int print_X(va_list X)
  * print_decimalToHexCode - prints hexcode of a decimal value
  * @decimalValue: the decimal value to fetch
  */
-void print_decimalToHexCode(int decimalValue)
+int print_decimalToHexCode(unsigned int num)
 {
-	int quotient = decimalValue;
-	int remainder;
-	int index = 1;
-	char hexCode[3];
+	int count = 0, i = 0;
+	char hex_buffer[BUFFER_SIZE];
+	char hex_char[] = "0123456789abcdef";
 
-	while (quotient != 0)
+	if (num == 0)
 	{
-		remainder = quotient % 16;
-		if (remainder < 10)
-			hexCode[index] = remainder + '0';
-		else
-			hexCode[index] = remainder - 10 + 'A';
-
-		quotient = quotient / 16;
-		index--;
+		_putchar('0');
+		count++;
 	}
+	else
+	{
+		while (num > 0)
+		{
+			hex_buffer[i] = hex_chars[num % 16];
+			num /= 16;
+			i++;
+		}
 
-	hexCode[0] = '0';
-	hexCode[2] = '\0';
-	_putchar(hexCode[0]);
-	_putchar(hexCode[1]);
-	_putchar(hexCode[2]);
+		for (i--; i >= 0; i--)
+		{
+			_putchar(hex_buffer[i]);
+			count++
+		}
+	}
+	return (count);
 }
