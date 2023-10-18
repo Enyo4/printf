@@ -68,3 +68,35 @@ int print_X(va_list X)
 {
 	return (print_hex(va_arg(X, unsigned int), 1));
 }
+/**
+ * print_decimalToHexCode - prints hexcode of a decimal value
+ * @decimalValue: the decimal value to fetch
+ */
+int print_decimalToHexCode(unsigned int num)
+{
+	int count = 0, i = 0;
+	char hex_buffer[BUFFER_SIZE];
+	char hex_char[] = "0123456789abcdef";
+
+	if (num == 0)
+	{
+		_putchar('0');
+		count++;
+	}
+	else
+	{
+		while (num > 0)
+		{
+			hex_buffer[i] = hex_chars[num % 16];
+			num /= 16;
+			i++;
+		}
+
+		for (i--; i >= 0; i--)
+		{
+			_putchar(hex_buffer[i]);
+			count++
+		}
+	}
+	return (count);
+}

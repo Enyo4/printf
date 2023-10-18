@@ -21,6 +21,7 @@ typedef struct op
 } print_f;
 
 int _putchar(char c);
+void printInteger(int num);
 int _printf(const char *format, ...);
 int print_string(va_list s);
 int print_char(va_list c);
@@ -34,5 +35,8 @@ int print_octal(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
 int print_p(va_list p);
+int print_hex(unsigned int n, unsigned int c);
+int print_decimalToHexCode(unsigned int num);
+int compareCharacter(char str);
 
 #endif
