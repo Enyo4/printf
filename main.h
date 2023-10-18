@@ -28,6 +28,7 @@ int print_int(va_list i);
 int print_dec(va_list d);
 int print_bin(va_list b);
 int print_oct(va_list o);
+int print_u(va_list u);
 int print_rev(va_list r);
 int print_octal(va_list o);
 int print_x(va_list x);
