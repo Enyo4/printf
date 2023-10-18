@@ -22,8 +22,9 @@ int print_string(va_list s)
 		{
 			_putchar('\\');
 			_putchar('x');
-			count += 2;
-			count += print_decimalToHexCode(my_string[i]);
+			_putchar('0');
+			count += 3;
+			count += print_decimalToHexCode(my_string[i], 1);
 		}
 		else
 		{
