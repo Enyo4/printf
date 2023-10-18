@@ -36,7 +36,7 @@ int print_x(va_list x);
 int print_X(va_list X);
 int print_ptr(va_list p);
 int print_hex(unsigned int n, unsigned int c);
-int print_decimalToHexCode(unsigned int num);
+int print_decimalToHexCode(unsigned long num);
 int compareCharacter(char str);
 
 #endif

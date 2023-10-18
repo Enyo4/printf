@@ -74,7 +74,7 @@ int print_X(va_list X)
  *
  * Return: number of characters printed
  */
-int print_decimalToHexCode(unsigned int num)
+int print_decimalToHexCode(unsigned long num)
 {
 	int count = 0, i = 0;
 	char hex_buffer[BUFFER_SIZE];
