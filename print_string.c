@@ -19,7 +19,12 @@ int print_string(va_list s)
 	while (my_string[i])
 	{
 		if (my_string[i] == '\n'
-				|| my_string[i] == '\b')
+				|| my_string[i] == '\a'
+				|| my_string[i] == '\b'
+				|| my_string[i] == '\f'
+				|| my_string[i] == '\r'
+				|| my_string[i] == '\t'
+				|| my_string[i] == '\v')
 		{
 			_putchar('\\');
 			_putchar('x');
