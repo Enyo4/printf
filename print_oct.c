@@ -11,7 +11,7 @@ int print_oct(va_list o)
 {
 	unsigned int num;
 	int i, count = 0;
-	int octal[32];
+	int octal[BUFFER_SIZE];
 
 	num = va_arg(o, unsigned int);
 	if (num == 0)
