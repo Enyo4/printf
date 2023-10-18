@@ -41,7 +41,7 @@ int print_octal(va_list o)
 }
 
 /**
-*print_rev - prints astring in reverse
+*print_rev - prints a string in reverse
 *@r: string to print
 *Return: number of chars printed
 */

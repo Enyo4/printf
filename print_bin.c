@@ -10,7 +10,7 @@ int print_bin(va_list b)
 {
 	unsigned int n;
 	int i, count = 0;
-	int binary[32];
+	int binary[BUFFER_SIZE];
 
 	n = va_arg(b, unsigned int);
 	if (n == 0)
