@@ -34,7 +34,7 @@ int print_rev(va_list r);
 int print_octal(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
-int print_p(va_list p);
+int print_ptr(va_list p);
 int print_hex(unsigned int n, unsigned int c);
 int print_decimalToHexCode(unsigned int num);
 int compareCharacter(char str);
