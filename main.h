@@ -35,7 +35,7 @@ int print_octal(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
 int print_hex(unsigned int n, unsigned int c);
-void print_decimalToHexCode(int decimalValue);
+int print_decimalToHexCode(unsigned int num);
 int compareCharacter(char str);
 
 #endif
