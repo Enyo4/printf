@@ -70,30 +70,45 @@ int print_X(va_list X)
 }
 /**
  * print_decimalToHexCode - prints hexcode of a decimal value
- * @decimalValue: the decimal value to fetch
+ * @num: number to be converted
+ * @n: 1 for uppercase hex (A-F), 0 for lowercase hex (a-f)
+ *
+ * Return: number of characters printed
  */
-void print_decimalToHexCode(int decimalValue)
+int print_decimalToHexCode(unsigned long num, int n)
 {
-	int quotient = decimalValue;
-	int remainder;
-	int index = 1;
-	char hexCode[3];
+	int count = 0, i = 0;
+	char hex_buffer[BUFFER_SIZE];
+	char hex_chars[] = "0123456789ABCDEF";
 
-	while (quotient != 0)
+	if (n == 0)
 	{
-		remainder = quotient % 16;
-		if (remainder < 10)
-			hexCode[index] = remainder + '0';
-		else
-			hexCode[index] = remainder - 10 + 'A';
-
-		quotient = quotient / 16;
-		index--;
+		hex_chars[10] = 'a';
+		hex_chars[11] = 'b';
+		hex_chars[12] = 'c';
+		hex_chars[13] = 'd';
+		hex_chars[14] = 'e';
+		hex_chars[15] = 'f';
 	}
+	if (num == 0)
+	{
+		_putchar('0');
+		count++;
+	}
+	else
+	{
+		while (num > 0)
+		{
+			hex_buffer[i] = hex_chars[num % 16];
+			num /= 16;
+			i++;
+		}
 
-	hexCode[0] = '0';
-	hexCode[2] = '\0';
-	_putchar(hexCode[0]);
-	_putchar(hexCode[1]);
-	_putchar(hexCode[2]);
+		for (i--; i >= 0; i--)
+		{
+			_putchar(hex_buffer[i]);
+			count++;
+		}
+	}
+	return (count);
 }
