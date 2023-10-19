@@ -37,5 +37,6 @@ int print_X(va_list X);
 int print_hex(unsigned int n, unsigned int c);
 void print_decimalToHexCode(int decimalValue);
 int compareCharacter(char str);
+char *rot13(va_list s);
 
 #endif

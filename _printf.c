@@ -20,6 +20,7 @@ int (*printf_func(const char *format))(va_list)
 		{"i", print_int},
 		{"b", print_bin},
 		{"r", print_rev},
+		{"R", rot13},
 		{"o", print_oct},
 		{"x", print_x},
 		{"X", print_X},
