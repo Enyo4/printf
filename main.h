@@ -38,5 +38,6 @@ int print_ptr(va_list p);
 int print_hex(unsigned int n, unsigned int c);
 int print_decimalToHexCode(unsigned long num, int n);
 int compareCharacter(char str);
+int (*printf_func(const char *format))(va_list);
 
 #endif

@@ -78,7 +78,7 @@ int print_X(va_list X)
 int print_decimalToHexCode(unsigned long num, int n)
 {
 	int count = 0, i = 0;
-	char hex_buffer[BUFFER_SIZE];
+	char hex_buffer[32];
 	char hex_chars[] = "0123456789ABCDEF";
 
 	if (n == 0)
