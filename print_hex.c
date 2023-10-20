@@ -104,7 +104,7 @@ int print_decimalToHexCode(unsigned long num, int n)
 			i++;
 		}
 
-		for (i--; i >= 0; i--)
+		for (--i; i >= 0; i--)
 		{
 			_putchar(hex_buffer[i]);
 			count++;
