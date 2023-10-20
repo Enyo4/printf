@@ -9,14 +9,16 @@
 int print_ptr(va_list p)
 {
 	int count = 0;
-	unsigned long addr = (unsigned long)va_arg(p, void *);;
+	unsigned long num;
+	void *ptr = va_arg(p, void *);
 
 	_putchar('0');
 	_putchar('x');
 	count += 2;
 
 	/* convert and print the pointer in hexadecimal. */
-	count += print_decimalToHexCode(addr, 0);
+	num = (unsigned long)ptr;
+	count += print_decimalToHexCode(num, 0);
 
 	return (count);
 }
