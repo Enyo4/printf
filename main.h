@@ -40,6 +40,5 @@ int print_decimalToHexCode(unsigned long num, int n);
 int compareCharacter(char str);
 int (*printf_func(const char *format))(va_list);
 int print_S(va_list S);
-int print_hex_value(char c);
 
 #endif

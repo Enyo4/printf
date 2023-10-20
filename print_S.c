@@ -23,7 +23,7 @@ int print_S(va_list S)
 			_putchar('\\');
 			_putchar('x');
 			count += 2;
-			count += print_hex_value(*str);
+			count += print_decimalToHexCode((unsigned long)*str, 0);
 		}
 		else
 		{
@@ -32,26 +32,5 @@ int print_S(va_list S)
 		}
 		str++;
 	}
-	return (count);
-}
-
-/**
- * print_hex_value - Print the hexadecimal representation of a character.
- * @c: The character for which to print the hexadecimal value.
- *
- * Return: The number of characters printed (always 2).
- */
-int print_hex_value(char c)
-{
-	int count = 0;
-	int value = c;
-	int upper_digit = value / 16;
-	int lower_digit = value % 16;
-
-	_putchar("0123456789ABCDEF"[upper_digit]);
-	_putchar("0123456789ABCDEF"[lower_digit]);
-
-	count += 2;
-
 	return (count);
 }
