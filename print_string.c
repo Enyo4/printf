@@ -16,7 +16,7 @@ int print_string(va_list s)
 	{
 		my_string = "(null)";
 	}
-	while (my_string[i])
+	for (; my_string[i] != '\0'; i++)
 	{
 		if (my_string[i] < 32 || my_string[i] >= 127)
 		{
@@ -31,7 +31,6 @@ int print_string(va_list s)
 			_putchar(my_string[i]);
 			count++;
 		}
-		i++;
 	}
 	return (count);
 }
