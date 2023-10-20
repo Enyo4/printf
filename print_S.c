@@ -22,7 +22,7 @@ int print_S(va_list S)
 		{
 			_putchar('\\');
 			_putchar('x');
-			count += print_hex_value(*str);
+			count += print_hex_value((unsigned char)*str);
 		}
 		else
 		{
@@ -40,7 +40,7 @@ int print_S(va_list S)
  *
  * Return: The number of characters printed (always 2).
  */
-int print_hex_value(char c)
+int print_hex_value(unsigned char c)
 {
 	int count = 0;
 	int value = c;
