@@ -40,8 +40,8 @@ int print_decimalToHexCode(unsigned long num, int n)
 		for (--i; i >= 0; i--)
 		{
 			_putchar(hex_buffer[i]);
+			count++;
 		}
-		count++;
 	}
 	return (count);
 }
