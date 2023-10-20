@@ -29,8 +29,8 @@ int print_string(va_list s)
 		else
 		{
 			_putchar(my_string[i]);
-			count++;
 		}
+		count++;
 	}
 	return (count);
 }
