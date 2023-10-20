@@ -23,7 +23,7 @@ int print_S(va_list S)
 			_putchar('\\');
 			_putchar('x');
 			count += 2;
-			count += print_decimalToHexCode((unsigned long)*str, 0);
+			count += print_hex_value(*str);
 		}
 		else
 		{

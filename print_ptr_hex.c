@@ -41,7 +41,28 @@ int print_decimalToHexCode(unsigned long num, int n)
 		{
 			_putchar(hex_buffer[i]);
 		}
-		count += 2;
+		count++;
 	}
+	return (count);
+}
+
+/**
+ * print_hex_value - Print the hexadecimal representation of a character.
+ * @c: The character for which to print the hexadecimal value.
+ *
+ * Return: The number of characters printed (always 2).
+ */
+int print_hex_value(unsigned char c)
+{
+	int count = 0;
+	int value = c;
+	int upper_digit = value / 16;
+	int lower_digit = value % 16;
+
+	_putchar("0123456789ABCDEF"[upper_digit]);
+	_putchar("0123456789ABCDEF"[lower_digit]);
+
+	count += 2;
+
 	return (count);
 }
