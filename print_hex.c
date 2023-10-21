@@ -68,32 +68,3 @@ int print_X(va_list X)
 {
 	return (print_hex(va_arg(X, unsigned int), 1));
 }
-/**
- * print_decimalToHexCode - prints hexcode of a decimal value
- * @decimalValue: the decimal value to fetch
- */
-void print_decimalToHexCode(int decimalValue)
-{
-	int quotient = decimalValue;
-	int remainder;
-	int index = 1;
-	char hexCode[3];
-
-	while (quotient != 0)
-	{
-		remainder = quotient % 16;
-		if (remainder < 10)
-			hexCode[index] = remainder + '0';
-		else
-			hexCode[index] = remainder - 10 + 'A';
-
-		quotient = quotient / 16;
-		index--;
-	}
-
-	hexCode[0] = '0';
-	hexCode[2] = '\0';
-	_putchar(hexCode[0]);
-	_putchar(hexCode[1]);
-	_putchar(hexCode[2]);
-}

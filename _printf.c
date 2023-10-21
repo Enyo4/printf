@@ -15,7 +15,7 @@ int (*printf_func(const char *format))(va_list)
 	print_f form[] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"S", print_string},
+		{"S", print_S},
 		{"d", print_dec},
 		{"i", print_int},
 		{"b", print_bin},
@@ -25,6 +25,7 @@ int (*printf_func(const char *format))(va_list)
 		{"X", print_X},
 		{"u", print_u},
 		{"p", print_ptr},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 

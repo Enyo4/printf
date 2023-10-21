@@ -34,8 +34,13 @@ int print_rev(va_list r);
 int print_octal(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
+int print_ptr(va_list p);
 int print_hex(unsigned int n, unsigned int c);
-void print_decimalToHexCode(int decimalValue);
+int print_decimalToHexCode(unsigned long num);
 int compareCharacter(char str);
+int (*printf_func(const char *format))(va_list);
+int print_S(va_list S);
+int print_hex_value(unsigned char c);
+int print_rot13(va_list R);
 
 #endif
