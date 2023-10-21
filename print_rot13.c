@@ -1,13 +1,13 @@
 #include "main.h"
 /**
  **print_Rot13- function that encodes a string using rot13
- *@args: input
+ *@R: input
  * Return: void
  */
-int print_Rot13(va_list args)
+int print_rot13(va_list R)
 {	int i, j;
 	int sum = 0;
-	char *s = va_arg(args, char *);
+	char *s = va_arg(R, char *);
 char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	for (i = 0; s[i] != '\0'; i++)
