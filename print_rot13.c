@@ -1,30 +1,5 @@
-#include <stdarg.h>
 #include "main.h"
-
-/**
- * rot13 - Apply the ROT13 algorithm to a string
- * @str: The input string
- *
- * Return: Pointer to the ROT13'd string
- */
-char *rot13(char *str)
-{
-	char *input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *output = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	int i, j;
-	for (i = 0; str[i]; i++)
-	{
-		for (j = 0; input[j]; j++)
-		{
-			if (str[i] == input[j])
-			{
-				str[i] = output[j];
-				break;
-			}
-		}
-	}
-	return (str);
-}
+#include <stdarg.h>
 
 /**
  * print_rot13 - Print the ROT13'd version of a string
@@ -34,19 +9,25 @@ char *rot13(char *str)
  */
 int print_rot13(va_list R)
 {
+	int i, j, count = 0;
 	char *str = va_arg(R, char *);
-	int count = 0;
+	char a[] = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char b[] = "nopqrstuvwxyzabcdefghijklm NOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	if (str == NULL)
 		str = "(null)";
 
-	str = rot13(str);
-
-	while (*str)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(*str);
-		count++;
-		str++;
+		for (j = 0; a[j] != '\0'; j++)
+		{
+			if (str[i] == a[j])
+			{
+				_putchar(b[j]);
+				count++;
+				break;
+			}
+		}
 	}
 	return (count);
 }
