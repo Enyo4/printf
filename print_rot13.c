@@ -1,48 +1,29 @@
 #include "main.h"
-
 /**
- * rot13 - encodes a string using rot13
- * @s: character to be rotated
- *
- * Return: encoded string.
+ **print_Rot13- function that encodes a string using rot13
+ *@R: input
+ * Return: void
  */
-char *rot13(va_list s)
-{
-	char *str;
-	int indx1 = 0, indx2;
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-			     'G', 'H', 'I', 'J', 'K', 'L',
-			     'M', 'N', 'O', 'P', 'Q', 'R',
-			     'S', 'T', 'U', 'V', 'W', 'X',
-			     'Y', 'Z', 'a', 'b', 'c', 'd',
-			     'e', 'f', 'g', 'h', 'i', 'j',
-			     'k', 'l', 'm', 'n', 'o', 'p',
-			     'q', 'r', 's', 't', 'u', 'v',
-			     'w', 'x', 'y', 'z'};
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
-			     'T', 'U', 'V', 'W', 'X', 'Y',
-			     'Z', 'A', 'B', 'C', 'D', 'E',
-			     'F', 'G', 'H', 'I', 'J', 'K',
-			     'L', 'M', 'n', 'o', 'p', 'q',
-			     'r', 's', 't', 'u', 'v', 'w',
-			     'x', 'y', 'z', 'a', 'b', 'c',
-			     'd', 'e', 'f', 'g', 'h', 'i',
-			     'j', 'k', 'l', 'm'};
-
-	str = va_arg(s, char *);
-	while (str[indx1])
+int print_rot13(va_list R)
+{	int i, j;
+	int sum = 0;
+	char *s = va_arg(R, char *);
+char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (indx2 = 0; indx2 < 52; indx2++)
-		{
-			if (str[indx1] == alphabet[indx2])
-			{
-				str[indx1] = rot13key[indx2];
-				break;
-			}
-		}
-
-		indx1++;
+		for (j = 0; a[j] != '\0'; j++)
+		if (s[i] == a[j])
+	{
+		_putchar(b[j]);
+		sum++;
+		break;
 	}
-
-	return (str);
+	if (!a[j])
+	{
+		_putchar(s[i]);
+		sum++;
+	}
+	}
+	return (sum);
 }

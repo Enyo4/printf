@@ -16,22 +16,10 @@ int print_string(va_list s)
 	{
 		my_string = "(null)";
 	}
-	while (my_string[i])
+	for (; my_string[i] != '\0'; i++)
 	{
-		if (my_string[i] < 32 || my_string[i] >= 127)
-		{
-			_putchar('\\');
-			_putchar('x');
-			_putchar('0');
-			count += 3;
-			count += print_decimalToHexCode(my_string[i], 1);
-		}
-		else
-		{
-			_putchar(my_string[i]);
-			count++;
-		}
-		i++;
+		_putchar(my_string[i]);
+		count++;
 	}
 	return (count);
 }

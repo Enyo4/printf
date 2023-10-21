@@ -17,7 +17,7 @@ int print_ptr(va_list p)
 	count += 2;
 
 	/* convert and print the pointer in hexadecimal. */
-	num = (unsigned long)ptr;
+	num = (unsigned long)(void *)ptr;
 	count += print_decimalToHexCode(num, 0);
 
 	return (count);
