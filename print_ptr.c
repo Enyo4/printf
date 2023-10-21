@@ -17,9 +17,12 @@ int print_ptr(va_list p)
 	if (ptr == NULL)
 	{
 		for (; str_null[i] != '\0'; i++)
+		{
 			_putchar(str_null[i]);
+			count++;
+		}
 
-		return (0);
+		return (count);
 	}
 
 	_putchar('0');
