@@ -4,25 +4,15 @@
 /**
  * print_decimalToHexCode - prints hexcode of a decimal value
  * @num: number to be converted
- * @n: 1 for uppercase hex (A-F), 0 for lowercase hex (a-f)
  *
  * Return: number of characters printed
  */
-int print_decimalToHexCode(unsigned long num, int n)
+int print_decimalToHexCode(unsigned long num)
 {
 	int count = 0, i = 0;
 	char hex_buffer[32];
-	char hex_chars[] = "0123456789ABCDEF";
+	char hex_chars[] = "0123456789abcdef";
 
-	if (n == 0)
-	{
-		hex_chars[10] = 'a';
-		hex_chars[11] = 'b';
-		hex_chars[12] = 'c';
-		hex_chars[13] = 'd';
-		hex_chars[14] = 'e';
-		hex_chars[15] = 'f';
-	}
 	if (num == 0)
 	{
 		_putchar('0');
