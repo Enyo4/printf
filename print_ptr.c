@@ -8,9 +8,19 @@
  */
 int print_ptr(va_list p)
 {
-	int count = 0;
+	int count = 0, i = 0;
 	unsigned long num;
 	void *ptr = va_arg(p, void *);
+	char *str_null = "(nil)";
+
+	/* check if ptr is not null */
+	if (ptr == NULL)
+	{
+		for (; str_null[i] != '\0'; i++)
+			_putchar(str_null[i]);
+
+		return (0);
+	}
 
 	_putchar('0');
 	_putchar('x');
